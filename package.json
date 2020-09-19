@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "description": "Collection of code snippets and poorly thought ideas",
   "main": "apiModule.js",
-  "dependencies": {},
+  "dependencies": {
+    "@vue/cli-service": "^4.5.6"
+  },
   "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@vue/cli-plugin-unit-jest": "^4.5.6",
     "@vue/test-utils": "^1.1.0",
-    "vue-jest": "^3.0.7"
+    "babel-core": "^6.26.3",
+    "vue": "^2.6.12",
+    "vue-jest": "^3.0.7",
+    "vue-template-compiler": "^2.6.12"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "npx vue-cli-service test:unit"
   },
   "repository": {
     "type": "git",
@@ -21,8 +28,15 @@
     "url": "https://github.com/cerbeh/snippets/issues"
   },
   "homepage": "https://github.com/cerbeh/snippets#readme",
-
   "jest": {
+    "preset": "@vue/cli-plugin-unit-jest",
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules",
+      "/examples"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
@@ -36,9 +50,14 @@
       "^@/(.*)$": "<rootDir>/src/$1"
     },
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"]
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ]
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
