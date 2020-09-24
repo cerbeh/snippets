@@ -22,3 +22,18 @@ const createComponent = () => ({
     },
   },
 });
+
+// Example of how usage is envisioned
+const { value } = createComponent('component-name')
+  .defineStaticProps({
+    propName: 'value',
+    propName2: 'value2',
+  })
+  .mapContext({
+    propName: 'value',
+    propName2: 'value2',
+  })
+  .insertSlots({
+    default: [ { Components } ],
+    [namedSlot]: {} || [],
+  });

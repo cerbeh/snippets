@@ -4,7 +4,8 @@
   "description": "Collection of code snippets and poorly thought ideas",
   "main": "apiModule.js",
   "dependencies": {
-    "@vue/cli-service": "^4.5.6"
+    "@vue/cli-service": "^4.5.6",
+    "buefy": "^0.9.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
